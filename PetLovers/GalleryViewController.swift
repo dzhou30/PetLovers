@@ -1,5 +1,5 @@
 //
-//  AppDelegate.swift
+//  GalleryViewController.swift
 //  PetLovers
 //
 //  Created by David Zhou on 3/7/23.
