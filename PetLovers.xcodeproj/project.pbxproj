@@ -13,6 +13,9 @@
 		CB9B0B3429B7EB3900CCABA5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB9B0B3329B7EB3900CCABA5 /* Preview Assets.xcassets */; };
 		CB9B0B3F29B7EB3900CCABA5 /* PetLoversTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9B0B3E29B7EB3900CCABA5 /* PetLoversTests.swift */; };
 		CB9B0B4A29B7EB3900CCABA5 /* PetLoversUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9B0B4929B7EB3900CCABA5 /* PetLoversUITests.swift */; };
+		CB9B0B5E29B7EBB900CCABA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9B0B5D29B7EBB900CCABA5 /* AppDelegate.swift */; };
+		CB9B0B6329B7EBDD00CCABA5 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9B0B6229B7EBDD00CCABA5 /* GalleryViewController.swift */; };
+		CB9B0B6E29B7F25300CCABA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB9B0B6C29B7F25300CCABA5 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,13 +41,16 @@
 		CB9B0B2E29B7EB3900CCABA5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CB9B0B3029B7EB3900CCABA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB9B0B3329B7EB3900CCABA5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		CB9B0B3529B7EB3900CCABA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB9B0B3A29B7EB3900CCABA5 /* PetLoversTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PetLoversTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB9B0B3E29B7EB3900CCABA5 /* PetLoversTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetLoversTests.swift; sourceTree = "<group>"; };
 		CB9B0B4029B7EB3900CCABA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB9B0B4529B7EB3900CCABA5 /* PetLoversUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PetLoversUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB9B0B4929B7EB3900CCABA5 /* PetLoversUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetLoversUITests.swift; sourceTree = "<group>"; };
 		CB9B0B4B29B7EB3900CCABA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB9B0B5D29B7EBB900CCABA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CB9B0B6229B7EBDD00CCABA5 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
+		CB9B0B6D29B7F25300CCABA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../../../Downloads/kitunia-prompt.initial/Kitunia/Base.lproj/LaunchScreen.storyboard"; sourceTree = "<group>"; };
+		CB9B0B8229B7F72B00CCABA5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +104,11 @@
 				CB9B0B2C29B7EB3900CCABA5 /* PetLoversApp.swift */,
 				CB9B0B2E29B7EB3900CCABA5 /* ContentView.swift */,
 				CB9B0B3029B7EB3900CCABA5 /* Assets.xcassets */,
-				CB9B0B3529B7EB3900CCABA5 /* Info.plist */,
+				CB9B0B8229B7F72B00CCABA5 /* Info.plist */,
 				CB9B0B3229B7EB3900CCABA5 /* Preview Content */,
+				CB9B0B5D29B7EBB900CCABA5 /* AppDelegate.swift */,
+				CB9B0B6229B7EBDD00CCABA5 /* GalleryViewController.swift */,
+				CB9B0B6C29B7F25300CCABA5 /* LaunchScreen.storyboard */,
 			);
 			path = PetLovers;
 			sourceTree = "<group>";
@@ -234,6 +243,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB9B0B3429B7EB3900CCABA5 /* Preview Assets.xcassets in Resources */,
+				CB9B0B6E29B7F25300CCABA5 /* LaunchScreen.storyboard in Resources */,
 				CB9B0B3129B7EB3900CCABA5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,6 +269,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB9B0B5E29B7EBB900CCABA5 /* AppDelegate.swift in Sources */,
+				CB9B0B6329B7EBDD00CCABA5 /* GalleryViewController.swift in Sources */,
 				CB9B0B2F29B7EB3900CCABA5 /* ContentView.swift in Sources */,
 				CB9B0B2D29B7EB3900CCABA5 /* PetLoversApp.swift in Sources */,
 			);
@@ -294,6 +306,17 @@
 			targetProxy = CB9B0B4629B7EB3900CCABA5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CB9B0B6C29B7F25300CCABA5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB9B0B6D29B7F25300CCABA5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		CB9B0B4C29B7EB3900CCABA5 /* Debug */ = {
