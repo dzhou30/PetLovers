@@ -20,3 +20,7 @@ class GalleryViewController: UIViewController {
         navigationItem.title = "Doudou"
     }
 }
+
+extension GalleryViewController {
+    let api = APIController()
+}
