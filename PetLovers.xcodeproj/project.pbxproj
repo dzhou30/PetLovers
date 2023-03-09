@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CB9B0B2D29B7EB3900CCABA5 /* PetLoversApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9B0B2C29B7EB3900CCABA5 /* PetLoversApp.swift */; };
-		CB9B0B2F29B7EB3900CCABA5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9B0B2E29B7EB3900CCABA5 /* ContentView.swift */; };
 		CB9B0B3129B7EB3900CCABA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB9B0B3029B7EB3900CCABA5 /* Assets.xcassets */; };
 		CB9B0B3429B7EB3900CCABA5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB9B0B3329B7EB3900CCABA5 /* Preview Assets.xcassets */; };
 		CB9B0B3F29B7EB3900CCABA5 /* PetLoversTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9B0B3E29B7EB3900CCABA5 /* PetLoversTests.swift */; };
@@ -37,8 +35,6 @@
 
 /* Begin PBXFileReference section */
 		CB9B0B2929B7EB3900CCABA5 /* PetLovers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetLovers.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CB9B0B2C29B7EB3900CCABA5 /* PetLoversApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetLoversApp.swift; sourceTree = "<group>"; };
-		CB9B0B2E29B7EB3900CCABA5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CB9B0B3029B7EB3900CCABA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB9B0B3329B7EB3900CCABA5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CB9B0B3A29B7EB3900CCABA5 /* PetLoversTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PetLoversTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,13 +97,12 @@
 		CB9B0B2B29B7EB3900CCABA5 /* PetLovers */ = {
 			isa = PBXGroup;
 			children = (
-				CB9B0B2C29B7EB3900CCABA5 /* PetLoversApp.swift */,
-				CB9B0B2E29B7EB3900CCABA5 /* ContentView.swift */,
+				CB9B0B9A29B9606C00CCABA5 /* API */,
+				CB9B0B9929B9604000CCABA5 /* ViewControllers */,
 				CB9B0B3029B7EB3900CCABA5 /* Assets.xcassets */,
 				CB9B0B8229B7F72B00CCABA5 /* Info.plist */,
 				CB9B0B3229B7EB3900CCABA5 /* Preview Content */,
 				CB9B0B5D29B7EBB900CCABA5 /* AppDelegate.swift */,
-				CB9B0B6229B7EBDD00CCABA5 /* GalleryViewController.swift */,
 				CB9B0B6C29B7F25300CCABA5 /* LaunchScreen.storyboard */,
 			);
 			path = PetLovers;
@@ -137,6 +132,21 @@
 				CB9B0B4B29B7EB3900CCABA5 /* Info.plist */,
 			);
 			path = PetLoversUITests;
+			sourceTree = "<group>";
+		};
+		CB9B0B9929B9604000CCABA5 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CB9B0B6229B7EBDD00CCABA5 /* GalleryViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		CB9B0B9A29B9606C00CCABA5 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,8 +281,6 @@
 			files = (
 				CB9B0B5E29B7EBB900CCABA5 /* AppDelegate.swift in Sources */,
 				CB9B0B6329B7EBDD00CCABA5 /* GalleryViewController.swift in Sources */,
-				CB9B0B2F29B7EB3900CCABA5 /* ContentView.swift in Sources */,
-				CB9B0B2D29B7EB3900CCABA5 /* PetLoversApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
