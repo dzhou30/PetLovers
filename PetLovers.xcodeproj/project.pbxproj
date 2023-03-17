@@ -15,6 +15,8 @@
 		CB9B0B6329B7EBDD00CCABA5 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9B0B6229B7EBDD00CCABA5 /* GalleryViewController.swift */; };
 		CB9B0B6E29B7F25300CCABA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB9B0B6C29B7F25300CCABA5 /* LaunchScreen.storyboard */; };
 		CB9B0B9C29B9616B00CCABA5 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9B0B9B29B9616B00CCABA5 /* APIController.swift */; };
+		CB9B0BA229C3E8D900CCABA5 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9B0BA129C3E8D900CCABA5 /* APIResponse.swift */; };
+		CB9B0BA729C3E8E800CCABA5 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9B0BA629C3E8E800CCABA5 /* Photo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		CB9B0B6D29B7F25300CCABA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../../../Downloads/kitunia-prompt.initial/Kitunia/Base.lproj/LaunchScreen.storyboard"; sourceTree = "<group>"; };
 		CB9B0B8229B7F72B00CCABA5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB9B0B9B29B9616B00CCABA5 /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
+		CB9B0BA129C3E8D900CCABA5 /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
+		CB9B0BA629C3E8E800CCABA5 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,7 @@
 		CB9B0B2B29B7EB3900CCABA5 /* PetLovers */ = {
 			isa = PBXGroup;
 			children = (
+				CB9B0BA029C3E8C300CCABA5 /* Model */,
 				CB9B0B9A29B9606C00CCABA5 /* API */,
 				CB9B0B9929B9604000CCABA5 /* ViewControllers */,
 				CB9B0B3029B7EB3900CCABA5 /* Assets.xcassets */,
@@ -150,6 +155,15 @@
 				CB9B0B9B29B9616B00CCABA5 /* APIController.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		CB9B0BA029C3E8C300CCABA5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CB9B0BA129C3E8D900CCABA5 /* APIResponse.swift */,
+				CB9B0BA629C3E8E800CCABA5 /* Photo.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,8 +297,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB9B0B5E29B7EBB900CCABA5 /* AppDelegate.swift in Sources */,
+				CB9B0BA229C3E8D900CCABA5 /* APIResponse.swift in Sources */,
 				CB9B0B6329B7EBDD00CCABA5 /* GalleryViewController.swift in Sources */,
 				CB9B0B9C29B9616B00CCABA5 /* APIController.swift in Sources */,
+				CB9B0BA729C3E8E800CCABA5 /* Photo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
