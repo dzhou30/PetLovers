@@ -17,6 +17,7 @@
 		CB9B0B9C29B9616B00CCABA5 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9B0B9B29B9616B00CCABA5 /* APIController.swift */; };
 		CB9B0BA229C3E8D900CCABA5 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9B0BA129C3E8D900CCABA5 /* APIResponse.swift */; };
 		CB9B0BA729C3E8E800CCABA5 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9B0BA629C3E8E800CCABA5 /* Photo.swift */; };
+		CB9B0BB229C3F07900CCABA5 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9B0BB129C3F07900CCABA5 /* ImageLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		CB9B0B9B29B9616B00CCABA5 /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
 		CB9B0BA129C3E8D900CCABA5 /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 		CB9B0BA629C3E8E800CCABA5 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		CB9B0BB129C3F07900CCABA5 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				CB9B0B9B29B9616B00CCABA5 /* APIController.swift */,
+				CB9B0BB129C3F07900CCABA5 /* ImageLoader.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 			files = (
 				CB9B0B5E29B7EBB900CCABA5 /* AppDelegate.swift in Sources */,
 				CB9B0BA229C3E8D900CCABA5 /* APIResponse.swift in Sources */,
+				CB9B0BB229C3F07900CCABA5 /* ImageLoader.swift in Sources */,
 				CB9B0B6329B7EBDD00CCABA5 /* GalleryViewController.swift in Sources */,
 				CB9B0B9C29B9616B00CCABA5 /* APIController.swift in Sources */,
 				CB9B0BA729C3E8E800CCABA5 /* Photo.swift in Sources */,

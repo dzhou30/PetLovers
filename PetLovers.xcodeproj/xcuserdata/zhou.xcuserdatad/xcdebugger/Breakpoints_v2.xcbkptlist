@@ -71,16 +71,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E4580255-A0AF-4DE5-A4E8-5EE7F99DCDD1"
-            shouldBeEnabled = "Yes"
+            uuid = "B0B5D7FD-EF51-4F4B-A45B-8F3754AF01E8"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PetLovers/ViewControllers/GalleryViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "loadMorePhotos()"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "loadFirstImage(photo:count:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
