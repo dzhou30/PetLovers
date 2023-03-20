@@ -58,6 +58,7 @@ extension GalleryDataSource {
 }
 
 extension GalleryDataSource {
+    
     func add(photos: [Photo]) {
         self.photos.append(contentsOf: photos)
     }
