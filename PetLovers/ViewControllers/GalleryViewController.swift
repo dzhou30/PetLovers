@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CHTCollectionViewWaterfallLayout
 
 class GalleryViewController: UIViewController {
     let api = APIController()
@@ -13,18 +14,58 @@ class GalleryViewController: UIViewController {
     
     var testImage: UIImage?
     let imageLoader = ImageLoader()
+    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: CHTCollectionViewWaterfallLayout())
+    lazy var dataSource: GalleryDataSource = {
+        GalleryDataSource(collectionView: self.collectionView, imageLoader: self.imageLoader)
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let label = UILabel(frame: CGRect(x: 100, y: 100, width: 1000, height: 100))
-        label.textColor = UIColor.red
-        label.backgroundColor = UIColor.white
-        label.text = "this is doudou photo"
         
-        self.view.addSubview(label)
+        //test add label view to main page
+//        let label = UILabel(frame: CGRect(x: 100, y: 100, width: 1000, height: 100))
+//        label.textColor = UIColor.red
+//        label.backgroundColor = UIColor.white
+//        label.text = "this is doudou photo"
+//        self.view.addSubview(label)
+        
         navigationItem.title = "Pet Lovers"
-        
+        collectionView.delegate = self
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(collectionView)
+        NSLayoutConstraint.activate([
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+        ])
+        //add long press gesture / double tap
         loadMorePhotos()
+    }
+}
+
+extension GalleryViewController : UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let photo = dataSource.photo(at: indexPath) else {
+            return
+        }
+        print("photo at", indexPath, "is clicked")
+    }
+}
+
+extension GalleryViewController: CHTCollectionViewDelegateWaterfallLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return dataSource.sizeForItem(at: indexPath)
+        //return CGSize(width: view.frame.size.width/3, height: view.frame.size.width/3)
+    }
+    
+    func collectionView (_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, columnCountFor section: Int) -> Int {
+        return 3
     }
 }
 
@@ -45,7 +86,8 @@ extension GalleryViewController {
 //                DispatchQueue.main.async {
 //                    self.dataSource.add(photos: response.photos)
 //                }
-                self.loadFirstImage(photo: response.photos[0], count: response.photos.count)
+                //self.loadFirstImage(photo: response.photos[0], count: response.photos.count)
+                self.dataSource.add(photos: response.photos)
             }
         }
         //TODO: rewrite

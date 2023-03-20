@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,8 @@
 		CB9B0BA729C3E8E800CCABA5 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9B0BA629C3E8E800CCABA5 /* Photo.swift */; };
 		CB9B0BB229C3F07900CCABA5 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9B0BB129C3F07900CCABA5 /* ImageLoader.swift */; };
 		CB9B0BBE29C8E6DF00CCABA5 /* GalleryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9B0BBD29C8E6DF00CCABA5 /* GalleryDataSource.swift */; };
+		CB9B0BCF29C8EF1B00CCABA5 /* CHTCollectionViewWaterfallLayout in Frameworks */ = {isa = PBXBuildFile; productRef = CB9B0BCE29C8EF1B00CCABA5 /* CHTCollectionViewWaterfallLayout */; };
+		CB9B0BD529C90B3200CCABA5 /* GalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9B0BD429C90B3200CCABA5 /* GalleryCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,7 @@
 		CB9B0BA629C3E8E800CCABA5 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		CB9B0BB129C3F07900CCABA5 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		CB9B0BBD29C8E6DF00CCABA5 /* GalleryDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryDataSource.swift; sourceTree = "<group>"; };
+		CB9B0BD429C90B3200CCABA5 /* GalleryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB9B0BCF29C8EF1B00CCABA5 /* CHTCollectionViewWaterfallLayout in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +111,7 @@
 		CB9B0B2B29B7EB3900CCABA5 /* PetLovers */ = {
 			isa = PBXGroup;
 			children = (
+				CB9B0BD329C90B1000CCABA5 /* Cells */,
 				CB9B0BBC29C8E6CD00CCABA5 /* Data Sources */,
 				CB9B0BA029C3E8C300CCABA5 /* Model */,
 				CB9B0B9A29B9606C00CCABA5 /* API */,
@@ -180,6 +185,14 @@
 			path = "Data Sources";
 			sourceTree = "<group>";
 		};
+		CB9B0BD329C90B1000CCABA5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CB9B0BD429C90B3200CCABA5 /* GalleryCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -196,6 +209,9 @@
 			dependencies = (
 			);
 			name = PetLovers;
+			packageProductDependencies = (
+				CB9B0BCE29C8EF1B00CCABA5 /* CHTCollectionViewWaterfallLayout */,
+			);
 			productName = PetLovers;
 			productReference = CB9B0B2929B7EB3900CCABA5 /* PetLovers.app */;
 			productType = "com.apple.product-type.application";
@@ -267,6 +283,9 @@
 				Base,
 			);
 			mainGroup = CB9B0B2029B7EB3900CCABA5;
+			packageReferences = (
+				CB9B0BCD29C8EF1B00CCABA5 /* XCRemoteSwiftPackageReference "CHTCollectionViewWaterfallLayout" */,
+			);
 			productRefGroup = CB9B0B2A29B7EB3900CCABA5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -314,6 +333,7 @@
 				CB9B0BA229C3E8D900CCABA5 /* APIResponse.swift in Sources */,
 				CB9B0BB229C3F07900CCABA5 /* ImageLoader.swift in Sources */,
 				CB9B0B6329B7EBDD00CCABA5 /* GalleryViewController.swift in Sources */,
+				CB9B0BD529C90B3200CCABA5 /* GalleryCell.swift in Sources */,
 				CB9B0BBE29C8E6DF00CCABA5 /* GalleryDataSource.swift in Sources */,
 				CB9B0B9C29B9616B00CCABA5 /* APIController.swift in Sources */,
 				CB9B0BA729C3E8E800CCABA5 /* Photo.swift in Sources */,
@@ -641,6 +661,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CB9B0BCD29C8EF1B00CCABA5 /* XCRemoteSwiftPackageReference "CHTCollectionViewWaterfallLayout" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/chiahsien/CHTCollectionViewWaterfallLayout.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.8;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CB9B0BCE29C8EF1B00CCABA5 /* CHTCollectionViewWaterfallLayout */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CB9B0BCD29C8EF1B00CCABA5 /* XCRemoteSwiftPackageReference "CHTCollectionViewWaterfallLayout" */;
+			productName = CHTCollectionViewWaterfallLayout;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CB9B0B2129B7EB3900CCABA5 /* Project object */;
 }
