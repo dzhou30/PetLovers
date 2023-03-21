@@ -44,5 +44,16 @@ class DetailViewController: UIViewController {
             imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor, multiplier: CGFloat(photo.size.aspectRadio))
         ])
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        //double tap
+        //tapGestureRecognizer.numberOfTapsRequired = 2
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+        let tappedImage = tapGestureRecognizer.view as! UIImageView
+        print("image is tapped")
     }
 }
