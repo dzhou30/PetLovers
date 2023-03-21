@@ -13,6 +13,7 @@ class ImageLoader {
     var tasks : [Photo: URLSessionDataTask] = [:]
     //Cache #1
     var imageCache = ImageCache(countLimit: 200)
+    var imageCacheIsOn = false
     
     //Cache #2
     init() {
@@ -32,10 +33,12 @@ class ImageLoader {
         case .full:
             url = photo.urls.full
         }
-        if let image = imageCache.getImage(for: url) {
-            print("loaded from cache #1")
-            completion(image)
-            return
+        if imageCacheIsOn {
+            if let image = imageCache.getImage(for: url) {
+                print("loaded from cache #1")
+                completion(image)
+                return
+            }
         }
         let task = URLSession.shared.dataTask(with: url) { data, result, error in
             guard let data = data else {
@@ -43,13 +46,20 @@ class ImageLoader {
                 return
             }
             let image = UIImage(data: data)
-            if let loadedImage = image {
-                self.imageCache.insertImage(image: loadedImage, for: url)
+            if self.imageCacheIsOn {
+                if let loadedImage = image {
+                    self.imageCache.insertImage(image: loadedImage, for: url)
+                }
             }
             completion(image)
         }
         tasks[photo] = task
         task.resume()
+    }
+    
+    func cancel(photo: Photo) {
+        tasks[photo]?.cancel()
+        tasks[photo] = nil
     }
     
     // preLoad full size photo for displaying detail view

@@ -35,6 +35,9 @@ extension Photo {
     struct Size : Hashable, Equatable, Codable{
         let width: Int
         let height: Int
+        var aspectRadio: Double {
+            return Double(width) / Double(height)
+        }
     }
     
     struct Location : Hashable, Equatable, Codable{

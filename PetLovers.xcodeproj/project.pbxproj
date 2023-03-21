@@ -21,6 +21,7 @@
 		CB9B0BBE29C8E6DF00CCABA5 /* GalleryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9B0BBD29C8E6DF00CCABA5 /* GalleryDataSource.swift */; };
 		CB9B0BCF29C8EF1B00CCABA5 /* CHTCollectionViewWaterfallLayout in Frameworks */ = {isa = PBXBuildFile; productRef = CB9B0BCE29C8EF1B00CCABA5 /* CHTCollectionViewWaterfallLayout */; };
 		CB9B0BD529C90B3200CCABA5 /* GalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9B0BD429C90B3200CCABA5 /* GalleryCell.swift */; };
+		CB9B0BE329CA5A4C00CCABA5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9B0BE229CA5A4C00CCABA5 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		CB9B0BB129C3F07900CCABA5 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		CB9B0BBD29C8E6DF00CCABA5 /* GalleryDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryDataSource.swift; sourceTree = "<group>"; };
 		CB9B0BD429C90B3200CCABA5 /* GalleryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCell.swift; sourceTree = "<group>"; };
+		CB9B0BE229CA5A4C00CCABA5 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				CB9B0B6229B7EBDD00CCABA5 /* GalleryViewController.swift */,
+				CB9B0BE229CA5A4C00CCABA5 /* DetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB9B0BE329CA5A4C00CCABA5 /* DetailViewController.swift in Sources */,
 				CB9B0B5E29B7EBB900CCABA5 /* AppDelegate.swift in Sources */,
 				CB9B0BA229C3E8D900CCABA5 /* APIResponse.swift in Sources */,
 				CB9B0BB229C3F07900CCABA5 /* ImageLoader.swift in Sources */,
