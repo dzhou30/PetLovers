@@ -53,6 +53,7 @@ class ImageLoader {
     }
     
     // preLoad full size photo for displaying detail view
+    // Go through all images and call loadImage to warm the cache for them
     func preLoad(photos: [Photo], completion: () -> Void) {
         for photo in photos {
             load(photo: photo, size: .full) { _ in }
