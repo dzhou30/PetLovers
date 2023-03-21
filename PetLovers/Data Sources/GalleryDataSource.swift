@@ -36,6 +36,7 @@ extension GalleryDataSource : UICollectionViewDataSource {
         guard let cell = cellUtyped as? GalleryCell else { return cellUtyped }
         guard let photo = photo(at: indexPath) else { return cell }
         imageLoader.load(photo: photo, size: .thumb) { image in
+            //print("photo's image at", indexPath , "is loaded to collectionView cell")
             DispatchQueue.main.async {
                 cell.imageView.image = image
             }

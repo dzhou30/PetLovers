@@ -51,6 +51,14 @@ class ImageLoader {
         tasks[photo] = task
         task.resume()
     }
+    
+    // preLoad full size photo for displaying detail view
+    func preLoad(photos: [Photo], completion: () -> Void) {
+        for photo in photos {
+            load(photo: photo, size: .full) { _ in }
+        }
+        completion()
+    }
 }
 
 extension ImageLoader {

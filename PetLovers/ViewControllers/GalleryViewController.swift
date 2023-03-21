@@ -103,15 +103,16 @@ extension GalleryViewController {
                 // TODO: HANDLE
             case .success(let response):
                 self.cursor = response.cursor
-//                self.imageLoader.preload(photos: response.photos, queue: .global(qos: .default)) {
-//                    print("All photos preloaded")
-//                }
 //                DispatchQueue.main.async {
 //                    self.dataSource.add(photos: response.photos)
 //                }
                 //self.loadFirstImage(photo: response.photos[0], count: response.photos.count)
                 self.dataSource.add(photos: response.photos)
-                print("load more photo and add to data source")
+                print("load more photos and add to data source")
+                
+                self.imageLoader.preLoad(photos: response.photos) {
+                    print("all photos are preloaded")
+                }
             }
             self.loading = false
         }
