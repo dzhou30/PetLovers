@@ -47,13 +47,16 @@ class GalleryViewController: UIViewController {
 
 extension GalleryViewController : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        
+        guard let photo = dataSource.photo(at: indexPath) else { return }
+        imageLoader.cancel(photo: photo)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let photo = dataSource.photo(at: indexPath) else {
             return
         }
+        let detailViewController = DetailViewController(photo: photo, imageLoader: imageLoader)
+        navigationController?.pushViewController(detailViewController, animated: false)
         print("photo at", indexPath, "is clicked")
     }
 }
@@ -103,16 +106,14 @@ extension GalleryViewController {
                 // TODO: HANDLE
             case .success(let response):
                 self.cursor = response.cursor
-//                DispatchQueue.main.async {
-//                    self.dataSource.add(photos: response.photos)
-//                }
                 //self.loadFirstImage(photo: response.photos[0], count: response.photos.count)
-                self.dataSource.add(photos: response.photos)
-                print("load more photos and add to data source")
-                
                 self.imageLoader.preLoad(photos: response.photos) {
                     print("all photos are preloaded")
                 }
+                DispatchQueue.main.async {
+                    self.dataSource.add(photos: response.photos)
+                }
+                print("load more photos and add to data source")
             }
             self.loading = false
         }
