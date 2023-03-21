@@ -15,6 +15,7 @@ class GalleryViewController: UIViewController {
     var testImage: UIImage?
     let imageLoader = ImageLoader()
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: CHTCollectionViewWaterfallLayout())
+    var loading = false
     lazy var dataSource: GalleryDataSource = {
         GalleryDataSource(collectionView: self.collectionView, imageLoader: self.imageLoader)
     }()
@@ -23,11 +24,11 @@ class GalleryViewController: UIViewController {
         super.viewDidLoad()
         
         //test add label view to main page
-//        let label = UILabel(frame: CGRect(x: 100, y: 100, width: 1000, height: 100))
-//        label.textColor = UIColor.red
-//        label.backgroundColor = UIColor.white
-//        label.text = "this is doudou photo"
-//        self.view.addSubview(label)
+        //        let label = UILabel(frame: CGRect(x: 100, y: 100, width: 1000, height: 100))
+        //        label.textColor = UIColor.red
+        //        label.backgroundColor = UIColor.white
+        //        label.text = "this is doudou photo"
+        //        self.view.addSubview(label)
         
         navigationItem.title = "Pet Lovers"
         collectionView.delegate = self
@@ -65,12 +66,34 @@ extension GalleryViewController: CHTCollectionViewDelegateWaterfallLayout {
     }
     
     func collectionView (_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, columnCountFor section: Int) -> Int {
-        return 3
+        return 2
+    }
+}
+
+extension GalleryViewController : UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard scrollView.kit_isAtBottom else { return }
+        loadMorePhotos()
+    }
+    
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        guard scrollView.kit_isAtBottom else { return }
+        loadMorePhotos()
+    }
+}
+
+extension UIScrollView {
+    
+    var kit_isAtBottom: Bool {
+        return contentOffset.y + frame.size.height >= contentSize.height
     }
 }
 
 extension GalleryViewController {
     func loadMorePhotos() {
+        guard !loading else { return }
+        loading = true
         
         //TODO: rewrite
         api.retrievePhotos(from: cursor) { result in
@@ -88,11 +111,13 @@ extension GalleryViewController {
 //                }
                 //self.loadFirstImage(photo: response.photos[0], count: response.photos.count)
                 self.dataSource.add(photos: response.photos)
+                print("load more photo and add to data source")
             }
+            self.loading = false
         }
         //TODO: rewrite
     }
-    
+        
     func loadFirstImage(photo: Photo, count: Int) {
         imageLoader.load(photo: photo, size: .thumb) { image in
             guard let image = image else {
