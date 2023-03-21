@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 class GalleryDataSource: NSObject {
+    
     private var photos: [Photo] = []
     private var imageLoader: ImageLoader
     private var collectionView: UICollectionView
@@ -61,6 +62,9 @@ extension GalleryDataSource {
     
     func add(photos: [Photo]) {
         self.photos.append(contentsOf: photos)
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
     }
     
     func photo(at indexPath: IndexPath) -> Photo? {

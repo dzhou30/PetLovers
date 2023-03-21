@@ -20,6 +20,11 @@ class GalleryCell: UICollectionViewCell {
         super.init(coder: coder)
         configure()
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        imageView.image = nil
+    }
 }
 
 extension GalleryCell {
