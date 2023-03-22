@@ -119,7 +119,28 @@ extension GalleryViewController {
         }
         //TODO: rewrite
     }
-        
+    
+    func loadMorePhotos2() {
+        guard !loading else { return }
+        loading = true
+        api.retrievePhotos2(from: cursor) {result in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let response):
+                self.cursor = response.cursor
+                //preLoad
+                self.imageLoader.preLoad(photos: response.photos) {
+                    
+                }
+                DispatchQueue.main.async {
+                    self.dataSource.add(photos: response.photos)
+                }
+            }
+            self.loading = false
+        }
+    }
+    
     func loadFirstImage(photo: Photo, count: Int) {
         imageLoader.load(photo: photo, size: .thumb) { image in
             guard let image = image else {
