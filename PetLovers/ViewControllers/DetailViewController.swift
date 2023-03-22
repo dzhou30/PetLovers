@@ -55,5 +55,8 @@ class DetailViewController: UIViewController {
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
         let tappedImage = tapGestureRecognizer.view as! UIImageView
         print("image is tapped")
+        
+        let listViewController = ListViewController(photo: photo, image: imageView.image!)
+        navigationController?.pushViewController(listViewController, animated: true)
     }
 }

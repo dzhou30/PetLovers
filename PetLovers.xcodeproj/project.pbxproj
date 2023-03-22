@@ -24,6 +24,7 @@
 		CB9B0BE329CA5A4C00CCABA5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9B0BE229CA5A4C00CCABA5 /* DetailViewController.swift */; };
 		CB9B0BEE29CA691500CCABA5 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9B0BED29CA691500CCABA5 /* ListViewController.swift */; };
 		CB9B0BF329CA694A00CCABA5 /* ListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9B0BF229CA694900CCABA5 /* ListViewCell.swift */; };
+		CB9B0BF829CA69D000CCABA5 /* ListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9B0BF729CA69D000CCABA5 /* ListDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		CB9B0BE229CA5A4C00CCABA5 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CB9B0BED29CA691500CCABA5 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		CB9B0BF229CA694900CCABA5 /* ListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewCell.swift; sourceTree = "<group>"; };
+		CB9B0BF729CA69D000CCABA5 /* ListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				CB9B0BBD29C8E6DF00CCABA5 /* GalleryDataSource.swift */,
+				CB9B0BF729CA69D000CCABA5 /* ListDataSource.swift */,
 			);
 			path = "Data Sources";
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				CB9B0BBE29C8E6DF00CCABA5 /* GalleryDataSource.swift in Sources */,
 				CB9B0B9C29B9616B00CCABA5 /* APIController.swift in Sources */,
 				CB9B0BEE29CA691500CCABA5 /* ListViewController.swift in Sources */,
+				CB9B0BF829CA69D000CCABA5 /* ListDataSource.swift in Sources */,
 				CB9B0BA729C3E8E800CCABA5 /* Photo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
