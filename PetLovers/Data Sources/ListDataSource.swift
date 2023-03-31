@@ -14,12 +14,16 @@ class ListDataSource : NSObject {
     let image : UIImage
     let photo : Photo
     
-    let data = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Monday2", "Tuesday2", "Wednesday2", "Thursday2", "Friday2", "Saturday2", "Sunday2"]
+    let data = ["3/1 Monday", "3/2 Tuesday", "3/3 Wednesday", "3/4 Thursday", "3/5 Friday", "3/6 Saturday", "3/7 Sunday", "3/8 Monday", "3/9 Tuesday", "3/10 Wednesday", "3/11 Thursday", "3/12 Friday", "3/13 Saturday", "3/14 Sunday"]
     
-    init(tableView: UITableView, photo: Photo, image: UIImage) {
+    let paginationEnabled : Bool
+    var weekData = [String]()
+    
+    init(tableView: UITableView, photo: Photo, image: UIImage, paginationEnabled: Bool) {
         self.tableView = tableView
         self.photo = photo
         self.image = image
+        self.paginationEnabled = paginationEnabled
         super.init()
         
         DispatchQueue.main.async {
@@ -32,6 +36,9 @@ class ListDataSource : NSObject {
 extension ListDataSource : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if paginationEnabled {
+            return weekData.count
+        }
         return data.count
     }
     
@@ -39,9 +46,26 @@ extension ListDataSource : UITableViewDataSource {
         let cellUtyped = tableView.dequeueReusableCell(withIdentifier: ListViewCell.reuseIdentifier, for: indexPath)
         guard let cell = cellUtyped as? ListViewCell else { return cellUtyped }
         cell.imageView2.image = image
-        cell.titleView.text = data[indexPath.row]
+        
+        let title : String
+        if paginationEnabled {
+            title = weekData[indexPath.row]
+        } else {
+            title = data[indexPath.row]
+        }
+        
+        cell.titleView.text = title
         cell.subtitleView1.text = String(photo.location!.lat)
         return cell
     }
+}
+
+extension ListDataSource {
     
+    func add(weeks: [String]) {
+        weekData.append(contentsOf: weeks)
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
 }

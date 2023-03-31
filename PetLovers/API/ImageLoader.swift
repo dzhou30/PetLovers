@@ -77,6 +77,19 @@ extension ImageLoader {
     enum Size {
         case thumb, full
     }
+    
+    func load3(photo: Photo, size: Size, completion: @escaping (UIImage?) -> ()) {
+        let url = photo.urls.thumb
+        let task = URLSession.shared.dataTask(with: url) {data, _ , _ in
+            guard let data = data else {
+                completion(nil)
+                return
+            }
+            let image = UIImage(data: data)
+            completion(image)
+        }
+        task.resume()
+    }
 }
 
 class ImageCache {
