@@ -10,12 +10,17 @@ import UIKit
 
 class ListWeekDataSource : NSObject {
     
+    static let threadIdentifier = "com.listWeekDataSource"
+    
     let imageLoader : ImageLoader
     
     var weekData = [Week]()
-    
+    let thread : DispatchQueue
+
     init(imageLoader: ImageLoader) {
         self.imageLoader = imageLoader
+        //this thread updates data model in serial queue
+        thread = DispatchQueue(label: ListWeekDataSource.threadIdentifier, qos: .userInitiated)
     }
 }
 
@@ -31,6 +36,7 @@ extension ListWeekDataSource : UITableViewDataSource {
         
         let week = weekData[indexPath.row]
         //TODO: should data source load image or put UIImage in viewModel
+        //data source can load image as this is process of binding data(UIImage)
         imageLoader.load(url: week.url) { image in
             DispatchQueue.main.async {
                 cell.imageView2.image = image
@@ -45,7 +51,10 @@ extension ListWeekDataSource : UITableViewDataSource {
 extension ListWeekDataSource {
     
     func add(weeks: [Week]) {
-        weekData.append(contentsOf: weeks)
+        // guard data model change in serial queue
+        thread.async { [weak self] in
+            self?.weekData.append(contentsOf: weeks)
+        }
     }
 }
 

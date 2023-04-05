@@ -12,14 +12,8 @@ class ListWeekViewController: UIViewController {
     
     let tableView = UITableView(frame: .zero, style: .plain)
     
-    let lastPage = 10
-    var currentPage = 1
-    var atLastPage = false
-    var paginationEnabled = true
-    var rewriteFetchingLoggicEnabled = true
-    
     //QQ: should put isLoading in VC or Controller, which thread should it be?
-    var isLoading = false
+    //isLoading should be put in controller for managing state
     
     let controller = ListWeekController()
     
@@ -64,32 +58,20 @@ extension ListWeekViewController : UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == controller.dataSource.weekData.count - 1 {
-            if !atLastPage {
-                loadMore()
-            }
+            loadMore()
         }
     }
 }
 
 extension ListWeekViewController {
+
     func loadMore() {
-        guard !isLoading else { return }
-        isLoading = true
-        controller.loadMore() {
+        controller.fetchWeekData() { [weak self] in
             //TODO: should switch back to VC thread?
-            loadMoreComplete()
+            //Yes
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
         }
-    }
-    
-    func loadMoreComplete() {
-        print("[ListWeekViewController] loadMoreComplete() for week", currentPage)
-        currentPage += 1
-        if currentPage == self.lastPage {
-            atLastPage = true
-        }
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
-        isLoading = false
     }
 }
