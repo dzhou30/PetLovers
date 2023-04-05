@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB84610729D7A5CC00B7D931 /* WeekDataServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB84610629D7A5CC00B7D931 /* WeekDataServices.swift */; };
+		CB84611229D7A80B00B7D931 /* ListWeekDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB84611129D7A80B00B7D931 /* ListWeekDataSource.swift */; };
+		CB84611A29D7AB6F00B7D931 /* ListWeekController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB84611929D7AB6F00B7D931 /* ListWeekController.swift */; };
+		CB84611F29D7ABD400B7D931 /* ListWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB84611E29D7ABD400B7D931 /* ListWeekViewController.swift */; };
+		CB84612429D7B06200B7D931 /* Week.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB84612329D7B06200B7D931 /* Week.swift */; };
 		CB9B0B3129B7EB3900CCABA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB9B0B3029B7EB3900CCABA5 /* Assets.xcassets */; };
 		CB9B0B3429B7EB3900CCABA5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB9B0B3329B7EB3900CCABA5 /* Preview Assets.xcassets */; };
 		CB9B0B3F29B7EB3900CCABA5 /* PetLoversTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9B0B3E29B7EB3900CCABA5 /* PetLoversTests.swift */; };
@@ -45,6 +50,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CB84610629D7A5CC00B7D931 /* WeekDataServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDataServices.swift; sourceTree = "<group>"; };
+		CB84611129D7A80B00B7D931 /* ListWeekDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListWeekDataSource.swift; sourceTree = "<group>"; };
+		CB84611929D7AB6F00B7D931 /* ListWeekController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListWeekController.swift; sourceTree = "<group>"; };
+		CB84611E29D7ABD400B7D931 /* ListWeekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListWeekViewController.swift; sourceTree = "<group>"; };
+		CB84612329D7B06200B7D931 /* Week.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Week.swift; sourceTree = "<group>"; };
 		CB9B0B2929B7EB3900CCABA5 /* PetLovers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetLovers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB9B0B3029B7EB3900CCABA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB9B0B3329B7EB3900CCABA5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -96,6 +106,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB84610B29D7A6B400B7D931 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CB84611929D7AB6F00B7D931 /* ListWeekController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		CB9B0B2029B7EB3900CCABA5 = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +137,7 @@
 		CB9B0B2B29B7EB3900CCABA5 /* PetLovers */ = {
 			isa = PBXGroup;
 			children = (
+				CB84610B29D7A6B400B7D931 /* Controller */,
 				CB9B0BD329C90B1000CCABA5 /* Cells */,
 				CB9B0BBC29C8E6CD00CCABA5 /* Data Sources */,
 				CB9B0BA029C3E8C300CCABA5 /* Model */,
@@ -165,6 +184,7 @@
 				CB9B0B6229B7EBDD00CCABA5 /* GalleryViewController.swift */,
 				CB9B0BE229CA5A4C00CCABA5 /* DetailViewController.swift */,
 				CB9B0BED29CA691500CCABA5 /* ListViewController.swift */,
+				CB84611E29D7ABD400B7D931 /* ListWeekViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -174,6 +194,7 @@
 			children = (
 				CB9B0B9B29B9616B00CCABA5 /* APIController.swift */,
 				CB9B0BB129C3F07900CCABA5 /* ImageLoader.swift */,
+				CB84610629D7A5CC00B7D931 /* WeekDataServices.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -183,6 +204,7 @@
 			children = (
 				CB9B0BA129C3E8D900CCABA5 /* APIResponse.swift */,
 				CB9B0BA629C3E8E800CCABA5 /* Photo.swift */,
+				CB84612329D7B06200B7D931 /* Week.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -192,6 +214,7 @@
 			children = (
 				CB9B0BBD29C8E6DF00CCABA5 /* GalleryDataSource.swift */,
 				CB9B0BF729CA69D000CCABA5 /* ListDataSource.swift */,
+				CB84611129D7A80B00B7D931 /* ListWeekDataSource.swift */,
 			);
 			path = "Data Sources";
 			sourceTree = "<group>";
@@ -341,17 +364,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB84611229D7A80B00B7D931 /* ListWeekDataSource.swift in Sources */,
 				CB9B0BF329CA694A00CCABA5 /* ListViewCell.swift in Sources */,
 				CB9B0BE329CA5A4C00CCABA5 /* DetailViewController.swift in Sources */,
+				CB84611A29D7AB6F00B7D931 /* ListWeekController.swift in Sources */,
 				CB9B0B5E29B7EBB900CCABA5 /* AppDelegate.swift in Sources */,
 				CB9B0BA229C3E8D900CCABA5 /* APIResponse.swift in Sources */,
 				CB9B0BB229C3F07900CCABA5 /* ImageLoader.swift in Sources */,
 				CB9B0B6329B7EBDD00CCABA5 /* GalleryViewController.swift in Sources */,
 				CB9B0BD529C90B3200CCABA5 /* GalleryCell.swift in Sources */,
+				CB84610729D7A5CC00B7D931 /* WeekDataServices.swift in Sources */,
 				CB9B0BBE29C8E6DF00CCABA5 /* GalleryDataSource.swift in Sources */,
 				CB9B0B9C29B9616B00CCABA5 /* APIController.swift in Sources */,
 				CB9B0BEE29CA691500CCABA5 /* ListViewController.swift in Sources */,
+				CB84612429D7B06200B7D931 /* Week.swift in Sources */,
 				CB9B0BF829CA69D000CCABA5 /* ListDataSource.swift in Sources */,
+				CB84611F29D7ABD400B7D931 /* ListWeekViewController.swift in Sources */,
 				CB9B0BA729C3E8E800CCABA5 /* Photo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

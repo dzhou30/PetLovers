@@ -57,6 +57,30 @@ class ImageLoader {
         task.resume()
     }
     
+    func load(url: URL, completion: @escaping( (UIImage?) -> ())) {
+        if imageCacheIsOn {
+            if let image = imageCache.getImage(for: url) {
+                print("loaded from cache #1")
+                completion(image)
+                return
+            }
+        }
+        let task = URLSession.shared.dataTask(with: url) { data, result, error in
+            guard let data = data else {
+                completion(nil)
+                return
+            }
+            let image = UIImage(data: data)
+            if self.imageCacheIsOn {
+                if let loadedImage = image {
+                    self.imageCache.insertImage(image: loadedImage, for: url)
+                }
+            }
+            completion(image)
+        }
+        task.resume()
+    }
+    
     func cancel(photo: Photo) {
         tasks[photo]?.cancel()
         tasks[photo] = nil
