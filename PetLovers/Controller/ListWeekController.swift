@@ -44,7 +44,7 @@ class ListWeekController {
         guard !atLastPage else { return }
         isLoading = true
         
-        weekDataServices.fetchWeekData2(weekIndex: weekIndex) { [weak self] (weekData) in
+        weekDataServices.fetchWeekData(weekIndex: weekIndex) { [weak self] (weekData) in
             self?.thread.async {
                 self?.fetchCompleteAndUpdateDataSource(weekData: weekData, completion: completion)
             }

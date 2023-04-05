@@ -13,7 +13,6 @@ class WeekDataService {
     
     let week = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
     let urlString = "https://storage.googleapis.com/kitunia/thumbs/1ca43621-36b6-4b70-bc89-5267bed79c2c.jpg"
-
     let subtitle = "subtitle"
     var weekDataIndex = 1
 
@@ -26,12 +25,7 @@ class WeekDataService {
         thread = DispatchQueue(label: WeekDataService.threadIdentifier, qos: .userInitiated)
     }
     
-    func fetchWeekData(weekIndex: Int) -> [Week] {
-        //TODO: can switch to a lower thread
-        return generateWeekData()
-    }
-    
-    func fetchWeekData2(weekIndex: Int, completion: @escaping (([Week]) -> ())) {
+    func fetchWeekData(weekIndex: Int, completion: @escaping (([Week]) -> ())) {
         thread.async { [weak self] in
             let weekData = self?.generateWeekData()
             completion(weekData!)
