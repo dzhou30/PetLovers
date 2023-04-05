@@ -14,6 +14,8 @@ class DetailViewController: UIViewController {
     
     let imageView = UIImageView()
     
+    var rewriteFetchingLogicEnabled = true
+    
     init(photo: Photo, imageLoader: ImageLoader) {
         self.photo = photo
         self.imageLoader = imageLoader
@@ -56,7 +58,12 @@ class DetailViewController: UIViewController {
         let tappedImage = tapGestureRecognizer.view as! UIImageView
         print("image is tapped")
         
-        let listViewController = ListViewController(photo: photo, image: tappedImage.image!)
-        navigationController?.pushViewController(listViewController, animated: true)
+        if rewriteFetchingLogicEnabled {
+            let listWeekViewController = ListWeekViewController()
+            navigationController?.pushViewController(listWeekViewController, animated: true)
+        } else {
+            let listViewController = ListViewController(photo: photo, image: tappedImage.image!)
+            navigationController?.pushViewController(listViewController, animated: true)
+        }
     }
 }
