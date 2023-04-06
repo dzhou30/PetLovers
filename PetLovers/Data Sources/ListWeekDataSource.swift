@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-// data source is belongs to View layer
+// data source belongs to View layer
 class ListWeekDataSource : NSObject {
     
     let imageLoader : ImageLoader
