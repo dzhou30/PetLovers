@@ -15,14 +15,19 @@ class ListWeekViewController: UIViewController {
     //QQ: should put isLoading in VC or Controller, which thread should it be?
     //isLoading should be put in controller for managing state
     
+    //inject
     let controller = ListWeekController()
     
+    //init
+    let dataSource : ListWeekDataSource
+
     init() {
+        dataSource = ListWeekDataSource(controller: controller, imageLoader: ImageLoader())
         super.init(nibName: nil, bundle: nil)
-        
-        DispatchQueue.main.async {
-            self.tableView.register(ListViewCell.self, forCellReuseIdentifier: ListViewCell.reuseIdentifier)
-            self.tableView.dataSource = self.controller.dataSource
+           
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.register(ListViewCell.self, forCellReuseIdentifier: ListViewCell.reuseIdentifier)
+            self?.tableView.dataSource = self?.dataSource
         }
     }
     
@@ -57,7 +62,7 @@ extension ListWeekViewController : UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == controller.dataSource.weekData.count - 1 {
+        if indexPath.row == controller.getListWeekData().count - 1 {
             loadMore()
         }
     }
