@@ -24,13 +24,15 @@ class ListWeekController {
     var isLoading = false
 
     //init
-    let dataSource : ListWeekDataSource
     let thread : DispatchQueue
+    //store data in controller
+    private var listWeekData : [Week]
     
     init() {
-        dataSource = ListWeekDataSource(imageLoader: imageLoader)
+        //self.dataSource = dataSource
         //this thread updates ivar of currentPage and isLoading state
         thread = DispatchQueue(label: ListWeekController.threadIdentifier, qos: .userInteractive)
+        listWeekData = [Week]()
     }
     
     func fetchWeekData(completion: @escaping () -> Void) {
@@ -51,14 +53,26 @@ class ListWeekController {
         }
     }
     
-    func fetchCompleteAndUpdateDataSource(weekData: [Week], completion: @escaping () -> Void) {
+    private func fetchCompleteAndUpdateDataSource(weekData: [Week], completion: @escaping () -> Void) {
         print("[ListWeekController] fetchCompleteAndUpdateDataSource() for week", currentPage)
         isLoading = false
         currentPage += 1
         if currentPage == lastPage {
             atLastPage = true
         }
-        dataSource.add(weeks: weekData)
+        listWeekData.append(contentsOf: weekData)
         completion()
     }
+    
+    func getListWeekData() -> [Week] {
+        return listWeekData
+    }
+    
+    func getListWeekDataAsync(completion: @escaping([Week]) -> Void) {
+        let data = listWeekData
+        thread.async {
+            completion(data)
+        }
+    }
+
 }
