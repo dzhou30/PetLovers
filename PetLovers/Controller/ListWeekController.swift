@@ -29,7 +29,6 @@ class ListWeekController {
     private var listWeekData : [Week]
     
     init() {
-        //self.dataSource = dataSource
         //this thread updates ivar of currentPage and isLoading state
         thread = DispatchQueue(label: ListWeekController.threadIdentifier, qos: .userInteractive)
         listWeekData = [Week]()
